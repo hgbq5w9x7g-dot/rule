@@ -67,10 +67,6 @@
           }
       }
     },
-    {
-      "tag": "直接出站",
-      "type": "direct"
-    }
   ],
   "route": {
     "rules": [
