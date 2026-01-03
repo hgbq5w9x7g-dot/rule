@@ -68,34 +68,6 @@
       }
     },
     {
-      "tag": "HYSTERIA2",
-      "type": "hysteria2",
-      "listen": "::",
-      "listen_port": 52021,
-      "users": [
-        {
-          "password": "c36d52aa-12b0-420c-a409-02f0410f6ac4"
-        }
-      ],
-      "tls": {
-        "enabled": true,
-        "alpn": [
-          "h3"
-        ],
-        "certificate_path": "/etc/ssl/yu.ykszckj.com/yu.ykszckj.com.crt",
-        "key_path": "/etc/ssl/yu.ykszckj.com/yu.ykszckj.com.key"
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "代理出站",
-      "type": "selector",
-      "outbounds": [
-        "直接出站"
-      ]
-    },
-    {
       "tag": "直接出站",
       "type": "direct"
     }
