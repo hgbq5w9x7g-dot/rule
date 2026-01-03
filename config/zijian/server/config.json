@@ -28,46 +28,67 @@
     "final": "cloudflare",
     "strategy": "ipv4_only"
   },
+
   "inbounds": [
     {
-      "tag":"SS",
+      "tag": "SS",
       "type": "shadowsocks",
       "listen": "::",
       "listen_port": 80,
       "method": "2022-blake3-aes-128-gcm",
       "password": "hztQCU1ZB8CAuPMVFJiCJw==",
       "multiplex": {
-          "enabled": true
+        "enabled": true
       }
     },
     {
-      "tag":"VLESS-Vision-Reality",
-      "type":"vless",
-      "listen":"::",
-      "listen_port":443,
-      "users":[
-          {
-              "uuid":"625a08bb-d372-4f7c-a2d4-6a50ca3393ce",
-              "flow":"xtls-rprx-vision"
-          }
+      "tag": "VLESS-Vision-Reality",
+      "type": "vless",
+      "listen": "::",
+      "listen_port": 443,
+      "users": [
+        {
+          "uuid": "625a08bb-d372-4f7c-a2d4-6a50ca3393ce",
+          "flow": "xtls-rprx-vision"
+        }
       ],
-      "tls":{
-          "enabled":true,
-          "server_name":"updates.cdn-apple.com",
-          "reality":{
-              "enabled":true,
-              "handshake":{
-                  "server":"updates.cdn-apple.com",
-                  "server_port":443
-              },
-              "private_key":"mAQVEs96AtDg1V_b2POFVP8n-Uu6hBe0_1Zt-DtRzGE",
-              "short_id":[
-                  "a118b9425a7e2dc5"
-              ]
-          }
+      "tls": {
+        "enabled": true,
+        "server_name": "updates.cdn-apple.com",
+        "reality": {
+          "enabled": true,
+          "handshake": {
+            "server": "updates.cdn-apple.com",
+            "server_port": 443
+          },
+          "private_key": "mAQVEs96AtDg1V_b2POFVP8n-Uu6hBe0_1Zt-DtRzGE",
+          "short_id": [
+            "a118b9425a7e2dc5"
+          ]
+        }
       }
-    },
+    }
   ],
+
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "直接出站"
+    },
+    {
+      "type": "selector",
+      "tag": "代理出站",
+      "outbounds": [
+        "直接出站"
+      ],
+      "default": "直接出站"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+
   "route": {
     "rules": [
       {
@@ -95,10 +116,6 @@
       {
         "ip_is_private": true,
         "outbound": "直接出站"
-      },
-      {
-        "rule_set": "geosite-ai",
-        "outbound": "代理出站"
       }
     ],
     "rule_set": [
@@ -116,12 +133,14 @@
       "server": "cloudflare"
     }
   },
+
   "experimental": {
     "cache_file": {
       "enabled": true,
       "path": "/etc/sing-box/cache.db"
     }
   },
+
   "log": {
     "disabled": false,
     "level": "info",
