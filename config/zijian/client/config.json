@@ -190,8 +190,7 @@
       "type": "selector",
       "outbounds": [
         "SS",
-        "VLESS-Vision-Reality",
-        "HYSTERIA2"
+        "VLESS-Vision-Reality"
       ]
     },
     {
@@ -199,8 +198,7 @@
       "type": "urltest",
       "outbounds": [
         "SS",
-        "VLESS-Vision-Reality",
-        "HYSTERIA2"
+        "VLESS-Vision-Reality"
       ],
       "interval": "10m",
       "tolerance": 100
@@ -244,7 +242,7 @@
         {
       "tag": "SS",
       "type": "shadowsocks",
-      "server": "147.79.20.99",
+      "server": "2001:19f0:0006:0259:5400:05ff:fedb:d7b0",
       "server_port": 80,
       "method": "2022-blake3-aes-128-gcm",
       "password": "hztQCU1ZB8CAuPMVFJiCJw=="
@@ -252,7 +250,7 @@
     {
       "tag": "VLESS-Vision-Reality",
       "type": "vless",
-      "server": "147.79.20.99",
+      "server": "2001:19f0:0006:0259:5400:05ff:fedb:d7b0",
       "server_port": 443,
       "uuid": "625a08bb-d372-4f7c-a2d4-6a50ca3393ce",
       "tls": {
@@ -271,20 +269,6 @@
       },
       "flow": "xtls-rprx-vision"
     },
-    {
-      "tag": "HYSTERIA2",
-      "type": "hysteria2",
-      "server": "yu.ykszckj.com",
-      "server_port": 52021,
-      "password": "c36d52aa-12b0-420c-a409-02f0410f6ac4",
-      "tls": {
-        "enabled": true,
-        "server_name": "yu.ykszckj.com",
-        "insecure": false,
-        "alpn": [
-          "h3"
-        ]
-      },
       "up_mbps": 100,
       "down_mbps": 800
     }
