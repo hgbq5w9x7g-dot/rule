@@ -28,12 +28,11 @@
     "final": "cloudflare",
     "strategy": "ipv4_only"
   },
-
   "inbounds": [
     {
       "tag": "SS",
       "type": "shadowsocks",
-      "listen": "::",
+      "listen": "0.0.0.0",
       "listen_port": 80,
       "method": "2022-blake3-aes-128-gcm",
       "password": "hztQCU1ZB8CAuPMVFJiCJw==",
@@ -44,7 +43,7 @@
     {
       "tag": "VLESS-Vision-Reality",
       "type": "vless",
-      "listen": "::",
+      "listen": "0.0.0.0",
       "listen_port": 443,
       "users": [
         {
@@ -69,26 +68,16 @@
       }
     }
   ],
-
   "outbounds": [
     {
       "type": "direct",
       "tag": "直接出站"
     },
     {
-      "type": "selector",
-      "tag": "代理出站",
-      "outbounds": [
-        "直接出站"
-      ],
-      "default": "直接出站"
-    },
-    {
       "type": "block",
       "tag": "block"
     }
   ],
-
   "route": {
     "rules": [
       {
@@ -124,14 +113,11 @@
       "server": "cloudflare"
     }
   },
-
   "experimental": {
     "cache_file": {
-      "enabled": true,
-      "path": "/etc/sing-box/cache.db"
+      "enabled": false
     }
   },
-
   "log": {
     "disabled": false,
     "level": "info",
