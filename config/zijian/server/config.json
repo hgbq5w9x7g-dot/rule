@@ -118,15 +118,6 @@
         "outbound": "直接出站"
       }
     ],
-    "rule_set": [
-      {
-        "tag": "geosite-ai",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ai-!cn.srs",
-        "download_detour": "直接出站"
-      }
-    ],
     "final": "直接出站",
     "auto_detect_interface": true,
     "default_domain_resolver": {
