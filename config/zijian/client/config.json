@@ -242,8 +242,8 @@
         {
       "tag": "SS",
       "type": "shadowsocks",
-      "server": "2001:19f0:0006:0259:5400:05ff:fedb:d7b0",
-      "server_port": 80,
+      "server": "candy.lemonadefactory.cc",
+      "server_port": 5200,
       "method": "2022-blake3-aes-128-gcm",
       "password": "hztQCU1ZB8CAuPMVFJiCJw=="
     },
